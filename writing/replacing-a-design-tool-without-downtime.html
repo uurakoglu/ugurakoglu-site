@@ -52,6 +52,9 @@ footer{border-top:1px solid #10202B}
 <p>With that approval, the server upgrade from Vesys to Capital Essentials started after working hours on 23 February and was completed the same night. The leftover Vesys components were backed up and moved elsewhere, so a rollback remained possible if anything unexpected appeared.</p>
 <h2>5. The next working day</h2>
 <p>When users arrived on the next working day they started Capital Essentials instead of Vesys, and continued on their projects with their existing libraries and data. There was no interruption.</p>
+<h2>Documentation is part of the work</h2>
+<p>I document everything I do, and this project was a good example. Before the migration I wrote a server-side document covering the installation, the upgrade and the other tasks involved, and a step-by-step checklist for the live cutover. On the night I followed my own checklist: stop a service, check it, run the next migration step, check again, move on. No step depended on memory.</p>
+<p>That also confirmed the value of the rehearsals. The test migration proved the steps in the document, and the checklist then made the real thing calm and repeatable. It matters beyond this project: the next time a similar migration comes up, even if I am not there, people can follow the documents, see the problems we met before and their solutions, and avoid solving them again.</p>
 <h2>An aside: two versions side by side</h2>
 <p>Another team still uses an older Vesys version, so I administer both that and Capital Essentials. Planning a migration for one group does not mean everyone moves at once, and that is fine as long as the two environments are kept clearly separate.</p>
 <p class="note">Written by Uğur Akoğlu, PLM Solutions Engineer. These are my own views and notes, not statements by my employer.</p>
