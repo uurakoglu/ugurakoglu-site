@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Replacing a design application under live users: Vesys to Capital Essentials | Uğur Akoğlu</title>
-<meta name="description" content="How we upgraded an electrical design application from Vesys to Capital Essentials on the same database and users, with test projects, key-user sign-off and a rollback plan, so people continued on Monday without any downtime.">
+<meta name="description" content="How we upgraded an electrical design application from Vesys to Capital Essentials on the same database and users, with test projects, key-user sign-off and a rollback plan, so people continued the next working day without any downtime.">
 <link rel="canonical" href="https://ugurakoglu.com/writing/replacing-a-design-tool-without-downtime.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Replacing a design application under live users: Vesys to Capital Essentials">
-<meta property="og:description" content="How we upgraded an electrical design application from Vesys to Capital Essentials on the same database and users, with test projects, key-user sign-off and a rollback plan, so people continued on Monday without any downtime.">
+<meta property="og:description" content="How we upgraded an electrical design application from Vesys to Capital Essentials on the same database and users, with test projects, key-user sign-off and a rollback plan, so people continued the next working day without any downtime.">
 <meta property="og:image" content="https://ugurakoglu.com/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
@@ -39,19 +39,19 @@ footer{border-top:1px solid #10202B}
 <body>
 <header><div class="bar"><a class="brand" href="../">UĞUR AKOĞLU</a><a class="back" href="../#writing">&larr; All writing</a></div></header>
 <main>
-<p class="meta">Migration</p>
+<p class="meta">February 2024</p>
 <h1>Replacing a design application under live users: Vesys to Capital Essentials</h1>
-<p>We moved our electrical design users from Vesys to Capital Essentials. The aim was simple to state and hard to guarantee: keep every table in the database and every user as it was, and have people keep working on Monday as if nothing had happened. Here is the sequence that made that possible.</p>
+<p>We moved our electrical design users from Vesys to Capital Essentials. The aim was simple to state and hard to guarantee: keep every table in the database and every user as it was, and have people keep working on Monday as if nothing had happened. Here is the sequence that made that possible. The project started on 1 December 2023, and the production switch happened on the evening of 23 February 2024.</p>
 <h2>1. Test without users, with real-looking data</h2>
-<p>Before any change on the live system, the migration was rehearsed in an environment without users, using test projects, test data and test users. This is where the technical problems get found and fixed.</p>
+<p>Before any change on the live system, the migration was rehearsed in an environment without users, using test projects, test data and test users. This is where the technical problems get found and fixed. The migration and upgrade in the test environment were completed on 29 January 2024.</p>
 <h2>2. Prepare the clients and the documents early</h2>
 <p>The client installation files and the instructions were prepared and shared with the team that does the installations before the migration date. That way the new clients were already in place on the day, and nobody was waiting for software.</p>
 <h2>3. A key user tests, and signs it off in writing</h2>
-<p>For the test environment, a key user from the Vesys user group was chosen, in agreement with that person's manager. The key user ran their own kind of work in the new version. We asked for written confirmation that nothing was wrong and that the migration could go ahead. This does two things: it catches problems from someone who knows the daily work, and it means the business has agreed to the change rather than having it done to them.</p>
-<h2>4. Upgrade outside working hours</h2>
-<p>With that approval, the server upgrade from Vesys to Capital Essentials was done outside working hours. The leftover Vesys components were backed up and moved elsewhere, so a rollback remained possible if anything unexpected appeared.</p>
-<h2>5. Monday morning</h2>
-<p>When users arrived on Monday they started Capital Essentials instead of Vesys, and continued on their projects with their existing libraries and data. There was no interruption.</p>
+<p>For the test environment, a key user from the Vesys user group was chosen, in agreement with that person's manager. The key user ran their own kind of work in the new version. The relevant team was informed on 29 January, and positive feedback came back on 19 February. We asked for written confirmation that nothing was wrong and that the migration could go ahead. This does two things: it catches problems from someone who knows the daily work, and it means the business has agreed to the change rather than having it done to them.</p>
+<h2>4. Upgrade after working hours</h2>
+<p>With that approval, the server upgrade from Vesys to Capital Essentials started after working hours on 23 February and was completed the same night. The leftover Vesys components were backed up and moved elsewhere, so a rollback remained possible if anything unexpected appeared.</p>
+<h2>5. The next working day</h2>
+<p>When users arrived on the next working day they started Capital Essentials instead of Vesys, and continued on their projects with their existing libraries and data. There was no interruption.</p>
 <h2>An aside: two versions side by side</h2>
 <p>Another team still uses an older Vesys version, so I administer both that and Capital Essentials. Planning a migration for one group does not mean everyone moves at once, and that is fine as long as the two environments are kept clearly separate.</p>
 <p class="note">Written by Uğur Akoğlu, PLM Solutions Engineer. These are my own views and notes, not statements by my employer.</p>
