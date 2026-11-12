@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kendi kullanmadığınız yazılımı yönetmek: 15'ten fazla mühendislik uygulamasını işletmek | Uğur Akoğlu</title>
+<meta name="description" content="On beşten fazla mühendislik uygulamasının lisans ve kurulum yöneticisi olmanın ne demek olduğu; tek kullanıcılı araçlardan bölümler arası kullanılanlara kadar, ve makine mühendisliği geçmişinin nasıl yardımcı olduğu.">
+<link rel="canonical" href="https://ugurakoglu.com/tr/writing/administering-engineering-software.html">
+<link rel="alternate" hreflang="en" href="https://ugurakoglu.com/writing/administering-engineering-software.html">
+<link rel="alternate" hreflang="tr" href="https://ugurakoglu.com/tr/writing/administering-engineering-software.html">
+<link rel="alternate" hreflang="x-default" href="https://ugurakoglu.com/writing/administering-engineering-software.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:url" content="https://ugurakoglu.com/tr/writing/administering-engineering-software.html">
+<meta property="og:title" content="Kendi kullanmadığınız yazılımı yönetmek: 15'ten fazla mühendislik uygulamasını işletmek">
+<meta property="og:description" content="On beşten fazla mühendislik uygulamasının lisans ve kurulum yöneticisi olmanın ne demek olduğu; tek kullanıcılı araçlardan bölümler arası kullanılanlara kadar, ve makine mühendisliği geçmişinin nasıl yardımcı olduğu.">
+<meta property="og:image" content="https://ugurakoglu.com/og-administering-engineering-software.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+body{margin:0;background:#F2F4F3;color:#10202B;font-family:'IBM Plex Sans',system-ui,sans-serif;font-size:18px;line-height:1.7}
+a{color:#1746C7}a:hover{color:#0E2F8A}
+a:focus-visible{outline:2px solid #1746C7;outline-offset:3px}
+header{border-bottom:1px solid #10202B}
+.bar{max-width:1120px;margin:0 auto;padding:18px clamp(16px,4vw,40px);display:flex;flex-wrap:wrap;gap:12px 32px;justify-content:space-between;align-items:center}
+.brand{font-family:'Archivo',sans-serif;font-weight:800;font-size:18px;letter-spacing:.02em;color:#10202B;text-decoration:none}
+.back{font-family:'IBM Plex Mono',monospace;font-size:14px;color:#10202B;padding:10px 0}
+main{max-width:720px;margin:0 auto;padding:clamp(32px,6vw,72px) clamp(16px,4vw,40px) 64px}
+.meta{font-family:'IBM Plex Mono',monospace;font-size:14px;color:#55636D;margin:0 0 12px}
+h1{font-family:'Archivo',sans-serif;font-weight:800;font-size:clamp(28px,5vw,40px);line-height:1.15;margin:0 0 28px}
+h2{font-family:'Archivo',sans-serif;font-weight:700;font-size:22px;line-height:1.25;margin:40px 0 8px}
+p,li{color:#33434E}
+p{margin:0 0 18px}
+ul{margin:0 0 18px;padding-left:22px}
+li{margin-bottom:6px}
+.eq{font-family:'IBM Plex Mono',monospace;font-size:16px;background:#FAFBFA;border:1px solid #C5CCCA;padding:14px 18px;margin:0 0 18px;overflow-x:auto;color:#10202B}
+.note{font-size:15px;color:#55636D;border-top:1px solid #C5CCCA;padding-top:16px;margin-top:40px}
+footer{border-top:1px solid #10202B}
+</style>
+</head>
+<body>
+<header><div class="bar"><a class="brand" href="../">UĞUR AKOĞLU</a><span><a class="back" href="../#writing">&larr; Tüm yazılar</a> &nbsp; <a class="back" href="../../writing/administering-engineering-software.html" hreflang="en" lang="en">EN</a></span></div></header>
+<main>
+<p class="meta">Yönetim</p>
+<h1>Kendi kullanmadığınız yazılımı yönetmek: 15'ten fazla mühendislik uygulamasını işletmek</h1>
+<p>İşimin bir kısmı, on beşten fazla mühendislik uygulamasının lisans ve sunucu tarafını yönetmek. Bunlar simülasyon ve analiz araçlarından CAD, elektronik, test ve PLM yazılımlarına uzanıyor. Rolüm, her birinin kurulu, lisanslı ve onlara güvenen mühendisler için çalışır durumda kalmasını sağlamak.</p>
+<h2>Çok dengesiz bir kullanıcı tabanı</h2>
+<p>Bazı araçların tek bir kullanıcısı var ve araçta ne çıkarsa o kişiye doğrudan destek oluyorum. Diğerleri bölümler arasında; analiz mühendisleri, mimarlar, tasarımcılar ve diğer uzmanlar tarafından kullanılıyor.</p>
+<h2>Yönetmek pratikte ne demek</h2>
+<ul>
+<li><strong>Kurulum.</strong> Yeni bir aracı, üretici iletişiminden sunucu kurulumuna, çalışan ve lisanslı bir servise kadar götürüyorum.</li>
+<li><strong>Kurulum dokümanları.</strong> Kurulum talimatlarını yazıyorum; destek ekibi istemcileri bunlardan kuruyor. Bunları ve lisans ile sunucu notlarını güncel tutuyorum; böylece biri işi daha sonra baştan başlamadan devralabiliyor.</li>
+<li><strong>Süregelen destek.</strong> Bir kullanıcı lisansla ya da uygulamanın kendisiyle sorun yaşadığında nedenini bulup çözüyorum.</li>
+<li><strong>Üretici eğitimleri.</strong> Bir ekip üreticiden eğitim istediğinde, doğru başlamasını, sorunsuz ilerlemesini ve tamamlanmasını sağlıyorum. Gereken lisans ve dokümantasyonu sağlıyor, oturumlar sırasında çıkan sorunları çözüyorum.</li>
+</ul>
+<h2>Derinliğimin olduğu yer</h2>
+<p>En derin uzmanlığım PLM; ENOVIA, CATIA ve DELMIA'yı derinlemesine biliyorum. Portföyün geri kalanında yönetici olarak çalışıyorum: her aracın ne işe yaradığını biliyorum, kurulumunu ve lisanslamasını ben sahipleniyorum ve bir sorun geldiğinde, neden netleşip kullanıcı yeniden çalışabilene kadar o aracın ayrıntısına iniyorum.</p>
+<h2>Makine mühendisliği geçmişi neden yardımcı olur</h2>
+<p>Destek verdiğim insanlar, kendi araçlarının diliyle düşünen mühendisler. Makine mühendisliği diplomam, anlattıklarını takip edebilmem, doğru ek soruları sorabilmem ve çözüme daha hızlı ulaşabilmem anlamına geliyor.</p>
+<p class="note">Uğur Akoğlu, PLM Çözüm Mühendisi tarafından yazıldı. Bunlar kendi görüş ve notlarımdır; işverenimin açıklamaları değildir.</p>
+</main>
+</body>
+</html>

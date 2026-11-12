@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Üretim verisini Excel'den PLM sistemine taşımak | Uğur Akoğlu</title>
+<meta name="description" content="Bir tesis üretim tarafı verisini Excel dosyalarından PLM platformu içindeki DELMIA'ya taşıdığında ve SAP'ye otomatik aktarım kurduğunda neler değişti, ve insanları eğitmenin neden en zor kısım olduğu.">
+<link rel="canonical" href="https://ugurakoglu.com/tr/writing/moving-manufacturing-data-into-plm.html">
+<link rel="alternate" hreflang="en" href="https://ugurakoglu.com/writing/moving-manufacturing-data-into-plm.html">
+<link rel="alternate" hreflang="tr" href="https://ugurakoglu.com/tr/writing/moving-manufacturing-data-into-plm.html">
+<link rel="alternate" hreflang="x-default" href="https://ugurakoglu.com/writing/moving-manufacturing-data-into-plm.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:url" content="https://ugurakoglu.com/tr/writing/moving-manufacturing-data-into-plm.html">
+<meta property="og:title" content="Üretim verisini Excel'den PLM sistemine taşımak">
+<meta property="og:description" content="Bir tesis üretim tarafı verisini Excel dosyalarından PLM platformu içindeki DELMIA'ya taşıdığında ve SAP'ye otomatik aktarım kurduğunda neler değişti, ve insanları eğitmenin neden en zor kısım olduğu.">
+<meta property="og:image" content="https://ugurakoglu.com/og-moving-manufacturing-data-into-plm.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+body{margin:0;background:#F2F4F3;color:#10202B;font-family:'IBM Plex Sans',system-ui,sans-serif;font-size:18px;line-height:1.7}
+a{color:#1746C7}a:hover{color:#0E2F8A}
+a:focus-visible{outline:2px solid #1746C7;outline-offset:3px}
+header{border-bottom:1px solid #10202B}
+.bar{max-width:1120px;margin:0 auto;padding:18px clamp(16px,4vw,40px);display:flex;flex-wrap:wrap;gap:12px 32px;justify-content:space-between;align-items:center}
+.brand{font-family:'Archivo',sans-serif;font-weight:800;font-size:18px;letter-spacing:.02em;color:#10202B;text-decoration:none}
+.back{font-family:'IBM Plex Mono',monospace;font-size:14px;color:#10202B;padding:10px 0}
+main{max-width:720px;margin:0 auto;padding:clamp(32px,6vw,72px) clamp(16px,4vw,40px) 64px}
+.meta{font-family:'IBM Plex Mono',monospace;font-size:14px;color:#55636D;margin:0 0 12px}
+h1{font-family:'Archivo',sans-serif;font-weight:800;font-size:clamp(28px,5vw,40px);line-height:1.15;margin:0 0 28px}
+h2{font-family:'Archivo',sans-serif;font-weight:700;font-size:22px;line-height:1.25;margin:40px 0 8px}
+p,li{color:#33434E}
+p{margin:0 0 18px}
+ul{margin:0 0 18px;padding-left:22px}
+li{margin-bottom:6px}
+.eq{font-family:'IBM Plex Mono',monospace;font-size:16px;background:#FAFBFA;border:1px solid #C5CCCA;padding:14px 18px;margin:0 0 18px;overflow-x:auto;color:#10202B}
+.note{font-size:15px;color:#55636D;border-top:1px solid #C5CCCA;padding-top:16px;margin-top:40px}
+footer{border-top:1px solid #10202B}
+</style>
+</head>
+<body>
+<header><div class="bar"><a class="brand" href="../">UĞUR AKOĞLU</a><span><a class="back" href="../#writing">&larr; Tüm yazılar</a> &nbsp; <a class="back" href="../../writing/moving-manufacturing-data-into-plm.html" hreflang="en" lang="en">EN</a></span></div></header>
+<main>
+<p class="meta">Mayıs 2024</p>
+<h1>Üretim verisini Excel'den PLM sistemine taşımak</h1>
+<p>Uzun süre, PLM sürecimiz tasarım yayınlandığında bitiyordu. Sonrasında olan her şey, yani verinin üretim tarafı, Excel dosyalarıyla yönetiliyordu. Ocak 2023 ile 2024 ilkbaharı arasında bu kısmı, mühendislerin zaten kullandığı PLM platformuna, DELMIA modülüyle taşıdık. Neyin değiştiği ve bunun neler gerektirdiği şöyle.</p>
+<h2>Önce: temiz bir tasarım, sonra tablolar</h2>
+<p>Tasarım, analiz, konfigürasyon ve proje mühendisleri zaten PLM içinde çalışıyordu. Tasarım bittiğinde üretim verisi Excel'e geçiyordu. Excel rahattır, çünkü herkes istediği anda istediğini düzenleyebilir; ama kimin neyi ne zaman değiştirdiğini kimse bilemez. Değişmiş bir dosya SAP'ye akmışsa, değişiklik orada izsiz yaşamaya devam ederdi.</p>
+<h2>Sonra: tek yer, tek sürüm</h2>
+<ul>
+<li><strong>İzlenebilirlik ve yetkiler.</strong> Her değişiklik kaydedilir, her kişinin tanımlı bir rolü vardır.</li>
+<li><strong>Herkes için tek canlı sürüm.</strong> İnsanlar en güncel veriyi ve geçmişini görür; üretim tarafı da tasarım verisini değiştikçe görebilir.</li>
+<li><strong>SAP'ye otomatik aktarım.</strong> Veri yeniden yazılmadan ya da kopyalanmadan, bir entegrasyonla PLM'den çıkar. PLM'in söylediği SAP'nin de söylediğidir.</li>
+<li><strong>Excel artık yalnızca bir rapor.</strong> PLM içindeki takip raporlarında duruyor, ama artık kimse veriyi onda yönetmiyor.</li>
+</ul>
+<h2>Yayınlanmış veriyi bilinçli olarak değiştirmek</h2>
+<p>Yeni disiplin şu: yayınlanmış veri öylece düzenlenemez. Değişiklik gerekiyorsa iki meşru yol var: doğru yol olan normal bir revizyon ya da bilet sistemimiz üzerinden bir talep. Bu talep yönetim onayından geçer ve PLM yönetici yetkisine sahip Mühendislik IT ekibine ulaşır. Değişikliği biz yaparız ve ilgili SAP sahiplerini de bilgilendiririz; böylece iki sistem birbiriyle uyumlu kalır.</p>
+<h2>En zor kısım insanlardı</h2>
+<p>Teknoloji yönetilebilirdi. En çok emek eğitime gitti. Excel'den PLM'e geçmek, her şeyi her an değiştirebilme özgürlüğünden vazgeçmek ve her şeyin izlendiği, yetkilerin açık olduğu bir sistemi kabul etmek demektir. İnsanların bu kaybı hissetmesi haklıydı; karşılığında ne kazandıklarının sabırla anlatılması gerekti: hangi dosyanın doğru olduğu konusunda karışıklığın bitmesi ve tesiste herkesin nereye bakarsa baksın aynı bilgiyi görmesi.</p>
+<p class="note">Uğur Akoğlu, PLM Çözüm Mühendisi tarafından yazıldı. Bunlar kendi görüş ve notlarımdır; işverenimin açıklamaları değildir.</p>
+</main>
+</body>
+</html>

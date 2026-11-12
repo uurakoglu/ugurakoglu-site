@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>1.600 mükerrer parça, 229.000 konumlandırma: PLM birleştirmesini matris hesabıyla düzeltmek | Uğur Akoğlu</title>
+<meta name="description" content="Yayınlanmış binlerce montajdaki mükerrer standart parçaları değiştirmek için sunucu tarafı MQL ve koordinat matrislerini nasıl kullandım; tahmini 1.100 adam-günlük tasarruf.">
+<link rel="canonical" href="https://ugurakoglu.com/tr/writing/merging-duplicate-parts-with-mql.html">
+<link rel="alternate" hreflang="en" href="https://ugurakoglu.com/writing/merging-duplicate-parts-with-mql.html">
+<link rel="alternate" hreflang="tr" href="https://ugurakoglu.com/tr/writing/merging-duplicate-parts-with-mql.html">
+<link rel="alternate" hreflang="x-default" href="https://ugurakoglu.com/writing/merging-duplicate-parts-with-mql.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:url" content="https://ugurakoglu.com/tr/writing/merging-duplicate-parts-with-mql.html">
+<meta property="og:title" content="1.600 mükerrer parça, 229.000 konumlandırma: PLM birleştirmesini matris hesabıyla düzeltmek">
+<meta property="og:description" content="Yayınlanmış binlerce montajdaki mükerrer standart parçaları değiştirmek için sunucu tarafı MQL ve koordinat matrislerini nasıl kullandım; tahmini 1.100 adam-günlük tasarruf.">
+<meta property="og:image" content="https://ugurakoglu.com/og-merging-duplicate-parts-with-mql.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+body{margin:0;background:#F2F4F3;color:#10202B;font-family:'IBM Plex Sans',system-ui,sans-serif;font-size:18px;line-height:1.7}
+a{color:#1746C7}a:hover{color:#0E2F8A}
+a:focus-visible{outline:2px solid #1746C7;outline-offset:3px}
+header{border-bottom:1px solid #10202B}
+.bar{max-width:1120px;margin:0 auto;padding:18px clamp(16px,4vw,40px);display:flex;flex-wrap:wrap;gap:12px 32px;justify-content:space-between;align-items:center}
+.brand{font-family:'Archivo',sans-serif;font-weight:800;font-size:18px;letter-spacing:.02em;color:#10202B;text-decoration:none}
+.back{font-family:'IBM Plex Mono',monospace;font-size:14px;color:#10202B;padding:10px 0}
+main{max-width:720px;margin:0 auto;padding:clamp(32px,6vw,72px) clamp(16px,4vw,40px) 64px}
+.meta{font-family:'IBM Plex Mono',monospace;font-size:14px;color:#55636D;margin:0 0 12px}
+h1{font-family:'Archivo',sans-serif;font-weight:800;font-size:clamp(28px,5vw,40px);line-height:1.15;margin:0 0 28px}
+h2{font-family:'Archivo',sans-serif;font-weight:700;font-size:22px;line-height:1.25;margin:40px 0 8px}
+p,li{color:#33434E}
+p{margin:0 0 18px}
+ul{margin:0 0 18px;padding-left:22px}
+li{margin-bottom:6px}
+.eq{font-family:'IBM Plex Mono',monospace;font-size:16px;background:#FAFBFA;border:1px solid #C5CCCA;padding:14px 18px;margin:0 0 18px;overflow-x:auto;color:#10202B}
+.note{font-size:15px;color:#55636D;border-top:1px solid #C5CCCA;padding-top:16px;margin-top:40px}
+footer{border-top:1px solid #10202B}
+</style>
+</head>
+<body>
+<header><div class="bar"><a class="brand" href="../">UĞUR AKOĞLU</a><span><a class="back" href="../#writing">&larr; Tüm yazılar</a> &nbsp; <a class="back" href="../../writing/merging-duplicate-parts-with-mql.html" hreflang="en" lang="en">EN</a></span></div></header>
+<main>
+<p class="meta">Eylül 2024</p>
+<h1>1.600 mükerrer parça, 229.000 konumlandırma: PLM birleştirmesini matris hesabıyla düzeltmek</h1>
+<p>İki ayrı PLM sistemi tek bir sistemde birleştirildiğinde, her ikisinde de bulunan standart parçalar (somunlar, cıvatalar, vidalar, kelepçeler, kablolar) yeni sisteme aynı başlıklarla iki kez geldi. Yaklaşık 1.600 parça mükerrer oldu. Mükerrerlerin yarısı bir ürün ailesi, yarısı diğeri tarafından kullanılıyordu.</p>
+<h2>Neden zordu</h2>
+<p>Bu parçaları kullanan montajlar zaten yayınlanmıştı, bu yüzden tasarımcılar bunları düzenleyemiyordu. Yönetici yetkisine sahip PLM ekibinin yapması gerekiyordu. Elle yöntem, her ana montajı 3DEXPERIENCE'ta açıp mükerreri, konumunu koruyarak tuttuğumuz parçayla değiştirmek ve mükerrer hiçbir yerde kullanılmaz hale gelene kadar bunu sürdürüp sonra silmekti. Bazı parçaların 10 ya da 20, bazılarının yüzlerce ana montajı vardı. Yaklaşık iki ay sonra iş yeterince hızlı ilerlemiyordu.</p>
+<h2>Fikir</h2>
+<p>Bir parçanın montajdaki konumu aslında bir koordinat dönüşümüdür. Parçanın bir ana montajdaki yerini iki şey belirler: parçanın kendi orijinine göre konumu ve o örneğin ana montajdaki yerleşim matrisi. İki mükerrerin aynı orijine sahip olması garanti değildi; bu yüzden basit bir değiştirme parçayı kaydırırdı.</p>
+<p>Çözüm, her çift için ofseti bir kez ölçüp sonra her yere uygulamaktır:</p>
+<ul>
+<li>Boş bir montajda, tuttuğumuz parçayı mükerrerin tam üzerine yerleştirin. İki konum arasındaki fark, o çift için tek bir ofset matrisi <strong>D</strong>'dir.</li>
+<li>Mükerrerin her ana montajdaki her örneğinin yerleşim matrisini (<strong>P</strong>) uygulama sunucusundan okuyun.</li>
+<li>Tuttuğumuz parçanın yerleşimini hesaplayın: <strong>P' = P &times; D</strong> (sıra, matris kuralına göre değişir).</li>
+</ul>
+<div class="eq">P' = P &times; D</div>
+<p>Tutulan parça daha sonra aynı örnek adı ve özellikleriyle birlikte, bu yerleşimle her ana montaja eklenir. İki parçanın birebir örtüştüğü doğrulandıktan sonra mükerrer ana montajdan çıkarılır. Mükerrer hiçbir yerde kullanılmaz hale gelince, tekrar seçilmesin diye kullanıcılardan gizlenir.</p>
+<h2>Ne değiştirdi</h2>
+<p>Yaklaşık 560 saatlik elle çalışma, yaklaşık 3.700 montajdaki 12.800 örnek üzerinden 643 parçayı birleştirdi; bu yüz örnek başına yaklaşık 4,3 saat eder. Yaklaşık 25 saatlik test dahil toplam yaklaşık 130 saat süren betikli çalışma, yaklaşık 15.000 montajdaki 229.000 örnek üzerinden 647 parçayı birleştirdi; bu yüz örnek başına yaklaşık 3 dakikadır. Aynı hacme ölçeklendiğinde, yaklaşık 10.000 saatlik elle iş, yani tahmini 1.100 adam-gün önlenmiş oldu.</p>
+<h2>Tekrar yapacağım şeyler</h2>
+<ul>
+<li>Matematiği birkaç parça üzerinde test edip, ölçekli çalıştırmadan önce örtüşmeyi kontrol etmek.</li>
+<li>Her adımı doğrulanabilir ve tekrarlanabilir kılmak; böylece beklenmedik bir durum geri alınabilir.</li>
+<li>Yayınlanmış veriyi kullanıcılar için salt okunur kabul etmek ve yönetici ekibine bunu düzeltmek için dokümante edilmiş bir yöntem vermek.</li>
+</ul>
+<p class="note">Uğur Akoğlu, PLM Çözüm Mühendisi tarafından yazıldı. Bunlar kendi görüş ve notlarımdır; işverenimin açıklamaları değildir.</p>
+</main>
+</body>
+</html>

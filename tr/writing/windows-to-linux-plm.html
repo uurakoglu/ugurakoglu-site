@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PLM sunucularını Windows'tan Linux'a taşımak gerçekte neyi değiştirdi | Uğur Akoğlu</title>
+<meta name="description" content="500 kullanıcılı bir 3DEXPERIENCE platformunun uygulama katmanını Windows'tan Linux'a taşıyan yüksek lisans tezimin bulguları: hız, veritabanı yükü ve lisans maliyeti.">
+<link rel="canonical" href="https://ugurakoglu.com/tr/writing/windows-to-linux-plm.html">
+<link rel="alternate" hreflang="en" href="https://ugurakoglu.com/writing/windows-to-linux-plm.html">
+<link rel="alternate" hreflang="tr" href="https://ugurakoglu.com/tr/writing/windows-to-linux-plm.html">
+<link rel="alternate" hreflang="x-default" href="https://ugurakoglu.com/writing/windows-to-linux-plm.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:url" content="https://ugurakoglu.com/tr/writing/windows-to-linux-plm.html">
+<meta property="og:title" content="PLM sunucularını Windows'tan Linux'a taşımak gerçekte neyi değiştirdi">
+<meta property="og:description" content="500 kullanıcılı bir 3DEXPERIENCE platformunun uygulama katmanını Windows'tan Linux'a taşıyan yüksek lisans tezimin bulguları: hız, veritabanı yükü ve lisans maliyeti.">
+<meta property="og:image" content="https://ugurakoglu.com/og-windows-to-linux-plm.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+body{margin:0;background:#F2F4F3;color:#10202B;font-family:'IBM Plex Sans',system-ui,sans-serif;font-size:18px;line-height:1.7}
+a{color:#1746C7}a:hover{color:#0E2F8A}
+a:focus-visible{outline:2px solid #1746C7;outline-offset:3px}
+header{border-bottom:1px solid #10202B}
+.bar{max-width:1120px;margin:0 auto;padding:18px clamp(16px,4vw,40px);display:flex;flex-wrap:wrap;gap:12px 32px;justify-content:space-between;align-items:center}
+.brand{font-family:'Archivo',sans-serif;font-weight:800;font-size:18px;letter-spacing:.02em;color:#10202B;text-decoration:none}
+.back{font-family:'IBM Plex Mono',monospace;font-size:14px;color:#10202B;padding:10px 0}
+main{max-width:720px;margin:0 auto;padding:clamp(32px,6vw,72px) clamp(16px,4vw,40px) 64px}
+.meta{font-family:'IBM Plex Mono',monospace;font-size:14px;color:#55636D;margin:0 0 12px}
+h1{font-family:'Archivo',sans-serif;font-weight:800;font-size:clamp(28px,5vw,40px);line-height:1.15;margin:0 0 28px}
+h2{font-family:'Archivo',sans-serif;font-weight:700;font-size:22px;line-height:1.25;margin:40px 0 8px}
+p,li{color:#33434E}
+p{margin:0 0 18px}
+ul{margin:0 0 18px;padding-left:22px}
+li{margin-bottom:6px}
+.eq{font-family:'IBM Plex Mono',monospace;font-size:16px;background:#FAFBFA;border:1px solid #C5CCCA;padding:14px 18px;margin:0 0 18px;overflow-x:auto;color:#10202B}
+.note{font-size:15px;color:#55636D;border-top:1px solid #C5CCCA;padding-top:16px;margin-top:40px}
+footer{border-top:1px solid #10202B}
+</style>
+</head>
+<body>
+<header><div class="bar"><a class="brand" href="../">UĞUR AKOĞLU</a><span><a class="back" href="../#writing">&larr; Tüm yazılar</a> &nbsp; <a class="back" href="../../writing/windows-to-linux-plm.html" hreflang="en" lang="en">EN</a></span></div></header>
+<main>
+<p class="meta">Eylül 2025</p>
+<h1>PLM sunucularını Windows'tan Linux'a taşımak gerçekte neyi değiştirdi</h1>
+<p>Ege Üniversitesi'ndeki yüksek lisans tezim pratik bir soru sordu: Bir PLM platformunun uygulama ve doküman sunucuları Windows'tan Linux'a taşınır, veritabanı ise olduğu yerde kalırsa, bu sistemi kullanan insanlar için ne değişir? Vaka, Windows üzerindeki R2021x sürümünden Linux üzerindeki R2024x sürümüne geçen 500 kullanıcılı bir 3DEXPERIENCE ortamıydı.</p>
+<h2>Neden bu konuya bakıyoruz</h2>
+<p>PLM platformları genellikle alışkanlıkla Windows sunucular üzerinde kurulur. Bu tercih lisans maliyeti, daha ağır bir bakım yükü ve güvenlik soruları getirir; ancak ondan uzaklaşmak risklidir, çünkü her PLM ürününün kendi platform bağımlılıkları vardır. Tez önce bu bağımlılıkları, ardından geçiş modellerini, araçları, riskleri ve maliyeti ele alıyor, sonra sonucu canlı bir sistem üzerinde sınıyor.</p>
+<h2>Ne ölçtüm</h2>
+<p>Tüm ölçümler haftanın en yoğun saat aralığında, aynı donanımla ve her iki kurulumda da veritabanı sunucusu Windows'ta bırakılarak alındı; yani gerçek değişiklik yalnızca uygulama katmanındaydı.</p>
+<ul>
+<li><strong>Yaklaşık 10.000 kalemlik referans araç montajını açma:</strong> Windows üzerindeki R2021x'te ortalama 1.050 saniye, Linux üzerindeki R2024x'te 540 saniye.</li>
+<li><strong>Tasarım değişikliğinden sonra kaydetme:</strong> önce 32 saniye, sonra 13 saniye.</li>
+<li><strong>Yeni parça oluşturup kaydetme:</strong> önce 18 saniye, sonra 7 saniye.</li>
+<li><strong>Veritabanı yükü:</strong> dakikada yüz binleri bulan bekleyen kilitler tek haneye düştü, CPU doygunluğu %80-90'dan %35-40'a indi.</li>
+</ul>
+<h2>Maliyette ne anlama geldi</h2>
+<p>Windows Server lisansları dokuz makineden ikiye indi, çünkü Windows'ta yalnızca veritabanı ve lisans sunucuları kaldı. Planlanan bir depolama yükseltmesi artık gerekmedi. Tez, ilk on iki ayda doğrudan tasarrufu 15.000 USD'nin üzerinde olarak veriyor.</p>
+<h2>Teknolojinin dışında neler önemliydi</h2>
+<p>Proje kısmen şu yüzden işe yaradı: değişikliğin gerekçeleri yönetime ve kullanıcılara sade bir dille anlatıldı, farklı bölümlerden küçük bir gönüllü grup erkenden test etti ve kendi birimlerinde anahtar kullanıcıya dönüştü, eğitim ve destek canlıya geçişten sonra da sürdü. Teknik ve kurumsal bulgular aynı yönü gösteriyor: dikkatli planlayın, hedefi seçmeden önce altyapıyı değerlendirin, pilot yapın ve geçişten sonra da insanlara destek olmayı sürdürün.</p>
+<h2>Devamı</h2>
+<p>Tezin tamamına <a href="../../Ugur_Akoglu_MSc_Thesis.pdf" target="_blank" rel="noopener">PDF olarak</a> ulaşabilirsiniz; ölçümlerin özeti <a href="../#thesis">ana sayfadaki</a> tez bölümünde yer alıyor.</p>
+<p class="note">Uğur Akoğlu, PLM Çözüm Mühendisi tarafından yazıldı. Bunlar kendi görüş ve notlarımdır; işverenimin açıklamaları değildir.</p>
+</main>
+</body>
+</html>
