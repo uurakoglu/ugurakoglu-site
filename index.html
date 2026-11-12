@@ -31,6 +31,16 @@ html{scroll-behavior:smooth}
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Person","name":"Uğur Akoğlu","alternateName":["Ugur Akoglu"],"jobTitle":"PLM Solutions Engineer","url":"https://ugurakoglu.com/","image":"https://ugurakoglu.com/photo.jpg","email":"mailto:ugur@ugurakoglu.com","worksFor":{"@type":"Organization","name":"BMC Otomotiv"},"alumniOf":[{"@type":"CollegeOrUniversity","name":"Ege University"},{"@type":"CollegeOrUniversity","name":"Dokuz Eylül University"}],"address":{"@type":"PostalAddress","addressLocality":"Izmir","addressCountry":"TR"},"sameAs":["https://www.linkedin.com/in/ugurakoglu/"]}
 </script>
+<script>
+/* Turkish-language browsers land on the Turkish page; choosing EN or TR in the header remembers the choice. */
+(function(){try{
+if(localStorage.getItem('lang'))return;
+var l=(navigator.languages&&navigator.languages[0])||navigator.language||'';
+if(!/^tr/i.test(l))return;
+var p=location.pathname.replace(/index\.html$/,'');
+location.replace('/tr'+(p==='/'?'/':p)+location.search+location.hash);
+}catch(e){}})();
+</script>
 </head>
 <body>
 <div style="background: #F2F4F3; color: #10202B; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 17px; line-height: 1.6">
@@ -44,7 +54,7 @@ html{scroll-behavior:smooth}
         <a href="#writing" style="color: #10202B; padding: 10px 0">Writing</a>
         <a href="#about" style="color: #10202B; padding: 10px 0">About</a>
         <a href="#contact" style="color: #10202B; padding: 10px 0">Contact</a>
-        <a href="tr/" hreflang="tr" lang="tr" style="color: #1746C7; padding: 10px 0; font-weight: 500">TR</a>
+        <a href="tr/" hreflang="tr" lang="tr" onclick="try{localStorage.setItem('lang','tr')}catch(e){}" style="color: #1746C7; padding: 10px 0; font-weight: 500">TR</a>
       </nav>
     </div>
   </header>

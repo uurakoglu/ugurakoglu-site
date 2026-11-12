@@ -40,9 +40,19 @@ li{margin-bottom:6px}
 .note{font-size:15px;color:#55636D;border-top:1px solid #C5CCCA;padding-top:16px;margin-top:40px}
 footer{border-top:1px solid #10202B}
 </style>
+<script>
+/* Turkish-language browsers land on the Turkish page; choosing EN or TR in the header remembers the choice. */
+(function(){try{
+if(localStorage.getItem('lang'))return;
+var l=(navigator.languages&&navigator.languages[0])||navigator.language||'';
+if(!/^tr/i.test(l))return;
+var p=location.pathname.replace(/index\.html$/,'');
+location.replace('/tr'+(p==='/'?'/':p)+location.search+location.hash);
+}catch(e){}})();
+</script>
 </head>
 <body>
-<header><div class="bar"><a class="brand" href="../">UĞUR AKOĞLU</a><a class="back" href="../#writing">&larr; All writing</a><a class="back" href="../tr/writing/moving-manufacturing-data-into-plm.html" hreflang="tr" lang="tr">TR</a></div></header>
+<header><div class="bar"><a class="brand" href="../">UĞUR AKOĞLU</a><a class="back" href="../#writing">&larr; All writing</a><a class="back" href="../tr/writing/moving-manufacturing-data-into-plm.html" hreflang="tr" lang="tr" onclick="try{localStorage.setItem('lang','tr')}catch(e){}">TR</a></div></header>
 <main>
 <p class="meta">May 2024</p>
 <h1>Moving manufacturing data out of Excel and into the PLM system</h1>
