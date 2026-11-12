@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Replacing a design application under live users: Vesys to Capital Essentials | Uğur Akoğlu</title>
+<meta name="description" content="How we upgraded an electrical design application from Vesys to Capital Essentials on the same database and users, with test projects, key-user sign-off and a rollback plan, so people continued on Monday without any downtime.">
+<link rel="canonical" href="https://ugurakoglu.com/writing/replacing-a-design-tool-without-downtime.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Replacing a design application under live users: Vesys to Capital Essentials">
+<meta property="og:description" content="How we upgraded an electrical design application from Vesys to Capital Essentials on the same database and users, with test projects, key-user sign-off and a rollback plan, so people continued on Monday without any downtime.">
+<meta property="og:image" content="https://ugurakoglu.com/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+body{margin:0;background:#F2F4F3;color:#10202B;font-family:'IBM Plex Sans',system-ui,sans-serif;font-size:18px;line-height:1.7}
+a{color:#1746C7}a:hover{color:#0E2F8A}
+a:focus-visible{outline:2px solid #1746C7;outline-offset:3px}
+header{border-bottom:1px solid #10202B}
+.bar{max-width:1120px;margin:0 auto;padding:18px clamp(16px,4vw,40px);display:flex;flex-wrap:wrap;gap:12px 32px;justify-content:space-between;align-items:center}
+.brand{font-family:'Archivo',sans-serif;font-weight:800;font-size:18px;letter-spacing:.02em;color:#10202B;text-decoration:none}
+.back{font-family:'IBM Plex Mono',monospace;font-size:14px;color:#10202B;padding:10px 0}
+main{max-width:720px;margin:0 auto;padding:clamp(32px,6vw,72px) clamp(16px,4vw,40px) 64px}
+.meta{font-family:'IBM Plex Mono',monospace;font-size:14px;color:#55636D;margin:0 0 12px}
+h1{font-family:'Archivo',sans-serif;font-weight:800;font-size:clamp(28px,5vw,40px);line-height:1.15;margin:0 0 28px}
+h2{font-family:'Archivo',sans-serif;font-weight:700;font-size:22px;line-height:1.25;margin:40px 0 8px}
+p,li{color:#33434E}
+p{margin:0 0 18px}
+ul{margin:0 0 18px;padding-left:22px}
+li{margin-bottom:6px}
+.eq{font-family:'IBM Plex Mono',monospace;font-size:16px;background:#FAFBFA;border:1px solid #C5CCCA;padding:14px 18px;margin:0 0 18px;overflow-x:auto;color:#10202B}
+.note{font-size:15px;color:#55636D;border-top:1px solid #C5CCCA;padding-top:16px;margin-top:40px}
+footer{border-top:1px solid #10202B}
+</style>
+</head>
+<body>
+<header><div class="bar"><a class="brand" href="../">UĞUR AKOĞLU</a><a class="back" href="../#writing">&larr; All writing</a></div></header>
+<main>
+<p class="meta">Migration</p>
+<h1>Replacing a design application under live users: Vesys to Capital Essentials</h1>
+<p>We moved our electrical design users from Vesys to Capital Essentials. The aim was simple to state and hard to guarantee: keep every table in the database and every user as it was, and have people keep working on Monday as if nothing had happened. Here is the sequence that made that possible.</p>
+<h2>1. Test without users, with real-looking data</h2>
+<p>Before any change on the live system, the migration was rehearsed in an environment without users, using test projects, test data and test users. This is where the technical problems get found and fixed.</p>
+<h2>2. Prepare the clients and the documents early</h2>
+<p>The client installation files and the instructions were prepared and shared with the team that does the installations before the migration date. That way the new clients were already in place on the day, and nobody was waiting for software.</p>
+<h2>3. A key user tests, and signs it off in writing</h2>
+<p>For the test environment, a key user from the Vesys user group was chosen, in agreement with that person's manager. The key user ran their own kind of work in the new version. We asked for written confirmation that nothing was wrong and that the migration could go ahead. This does two things: it catches problems from someone who knows the daily work, and it means the business has agreed to the change rather than having it done to them.</p>
+<h2>4. Upgrade outside working hours</h2>
+<p>With that approval, the server upgrade from Vesys to Capital Essentials was done outside working hours. The leftover Vesys components were backed up and moved elsewhere, so a rollback remained possible if anything unexpected appeared.</p>
+<h2>5. Monday morning</h2>
+<p>When users arrived on Monday they started Capital Essentials instead of Vesys, and continued on their projects with their existing libraries and data. There was no interruption.</p>
+<h2>An aside: two versions side by side</h2>
+<p>Another team still uses an older Vesys version, so I administer both that and Capital Essentials. Planning a migration for one group does not mean everyone moves at once, and that is fine as long as the two environments are kept clearly separate.</p>
+<p class="note">Written by Uğur Akoğlu, PLM Solutions Engineer. These are my own views and notes, not statements by my employer.</p>
+</main>
+</body>
+</html>

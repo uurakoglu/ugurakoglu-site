@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Moving manufacturing data out of Excel and into the PLM system | Uğur Akoğlu</title>
+<meta name="description" content="What changed when a plant moved production-side data from Excel files into DELMIA inside its PLM platform, with an automatic hand-off to SAP, and why training people was the hardest part.">
+<link rel="canonical" href="https://ugurakoglu.com/writing/moving-manufacturing-data-into-plm.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Moving manufacturing data out of Excel and into the PLM system">
+<meta property="og:description" content="What changed when a plant moved production-side data from Excel files into DELMIA inside its PLM platform, with an automatic hand-off to SAP, and why training people was the hardest part.">
+<meta property="og:image" content="https://ugurakoglu.com/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+body{margin:0;background:#F2F4F3;color:#10202B;font-family:'IBM Plex Sans',system-ui,sans-serif;font-size:18px;line-height:1.7}
+a{color:#1746C7}a:hover{color:#0E2F8A}
+a:focus-visible{outline:2px solid #1746C7;outline-offset:3px}
+header{border-bottom:1px solid #10202B}
+.bar{max-width:1120px;margin:0 auto;padding:18px clamp(16px,4vw,40px);display:flex;flex-wrap:wrap;gap:12px 32px;justify-content:space-between;align-items:center}
+.brand{font-family:'Archivo',sans-serif;font-weight:800;font-size:18px;letter-spacing:.02em;color:#10202B;text-decoration:none}
+.back{font-family:'IBM Plex Mono',monospace;font-size:14px;color:#10202B;padding:10px 0}
+main{max-width:720px;margin:0 auto;padding:clamp(32px,6vw,72px) clamp(16px,4vw,40px) 64px}
+.meta{font-family:'IBM Plex Mono',monospace;font-size:14px;color:#55636D;margin:0 0 12px}
+h1{font-family:'Archivo',sans-serif;font-weight:800;font-size:clamp(28px,5vw,40px);line-height:1.15;margin:0 0 28px}
+h2{font-family:'Archivo',sans-serif;font-weight:700;font-size:22px;line-height:1.25;margin:40px 0 8px}
+p,li{color:#33434E}
+p{margin:0 0 18px}
+ul{margin:0 0 18px;padding-left:22px}
+li{margin-bottom:6px}
+.eq{font-family:'IBM Plex Mono',monospace;font-size:16px;background:#FAFBFA;border:1px solid #C5CCCA;padding:14px 18px;margin:0 0 18px;overflow-x:auto;color:#10202B}
+.note{font-size:15px;color:#55636D;border-top:1px solid #C5CCCA;padding-top:16px;margin-top:40px}
+footer{border-top:1px solid #10202B}
+</style>
+</head>
+<body>
+<header><div class="bar"><a class="brand" href="../">UĞUR AKOĞLU</a><a class="back" href="../#writing">&larr; All writing</a></div></header>
+<main>
+<p class="meta">May 2024</p>
+<h1>Moving manufacturing data out of Excel and into the PLM system</h1>
+<p>For a long time, our PLM process ended when the design was released. Everything after that, the manufacturing side of the data, was handled in Excel files. Between January 2023 and spring 2024 we brought that part into the same PLM platform the engineers already used, using the DELMIA module. This is what changed and what it took.</p>
+<h2>Before: a clean design, then spreadsheets</h2>
+<p>Design, analysis, configuration and project engineers already worked inside PLM. Once a design was done, production data moved into Excel. Excel is comfortable, since anyone can edit anything at any time, but nobody can tell who changed what or when. When a changed file had already flowed into SAP, the change simply lived on there without a trace.</p>
+<h2>After: one place, one version</h2>
+<ul>
+<li><strong>Traceability and permissions.</strong> Every change is recorded and every person has a defined role.</li>
+<li><strong>One live version for everyone.</strong> People see the latest data and its history, and the production side can see design data as it changes.</li>
+<li><strong>Automatic hand-off to SAP.</strong> Data leaves PLM through an integration instead of being retyped or copied. What PLM says is what SAP says.</li>
+<li><strong>Excel is now only a report.</strong> It remains in the tracking reports inside PLM, but nobody manages data in it any more.</li>
+</ul>
+<h2>Changing released data on purpose</h2>
+<p>The new discipline is that released data cannot just be edited. If a change is needed, there are two legitimate routes: a normal revision, which is the right way, or a request through our ticketing system. That request goes through management approval and then to the Engineering IT team, which holds the PLM administrator rights. We make the change and also notify the relevant SAP owners, so both systems stay in step.</p>
+<h2>The hardest part was people</h2>
+<p>The technology was manageable. What took the most effort was training. Moving from Excel to PLM means giving up the freedom to change anything at any moment, and accepting a system where everything is tracked and permissions are explicit. People were right to feel that loss, and it needed patient explanation of what they gain in return: no more confusion over which file is correct, and the same information wherever anyone in the plant looks.</p>
+<p>The first go-live took roughly from January 2023 to April or May 2024.</p>
+<p class="note">Written by Uğur Akoğlu, PLM Solutions Engineer. These are my own views and notes, not statements by my employer.</p>
+</main>
+</body>
+</html>
