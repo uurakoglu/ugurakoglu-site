@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Upgrades are mostly a people project: moving users to a new PLM release | Uğur Akoğlu</title>
+<meta name="description" content="What I have learned from the 2024x upgrade and the DELMIA rollout about helping engineers adopt change: explain why, pilot early, support after go-live.">
+<link rel="canonical" href="https://ugurakoglu.com/writing/moving-users-to-new-plm-release.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Upgrades are mostly a people project: moving users to a new PLM release">
+<meta property="og:description" content="What I have learned from the 2024x upgrade and the DELMIA rollout about helping engineers adopt change: explain why, pilot early, support after go-live.">
+<meta property="og:image" content="https://ugurakoglu.com/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+body{margin:0;background:#F2F4F3;color:#10202B;font-family:'IBM Plex Sans',system-ui,sans-serif;font-size:18px;line-height:1.7}
+a{color:#1746C7}a:hover{color:#0E2F8A}
+a:focus-visible{outline:2px solid #1746C7;outline-offset:3px}
+header{border-bottom:1px solid #10202B}
+.bar{max-width:1120px;margin:0 auto;padding:18px clamp(16px,4vw,40px);display:flex;flex-wrap:wrap;gap:12px 32px;justify-content:space-between;align-items:center}
+.brand{font-family:'Archivo',sans-serif;font-weight:800;font-size:18px;letter-spacing:.02em;color:#10202B;text-decoration:none}
+.back{font-family:'IBM Plex Mono',monospace;font-size:14px;color:#10202B;padding:10px 0}
+main{max-width:720px;margin:0 auto;padding:clamp(32px,6vw,72px) clamp(16px,4vw,40px) 64px}
+.meta{font-family:'IBM Plex Mono',monospace;font-size:14px;color:#55636D;margin:0 0 12px}
+h1{font-family:'Archivo',sans-serif;font-weight:800;font-size:clamp(28px,5vw,40px);line-height:1.15;margin:0 0 28px}
+h2{font-family:'Archivo',sans-serif;font-weight:700;font-size:22px;line-height:1.25;margin:40px 0 8px}
+p,li{color:#33434E}
+p{margin:0 0 18px}
+ul{margin:0 0 18px;padding-left:22px}
+li{margin-bottom:6px}
+.eq{font-family:'IBM Plex Mono',monospace;font-size:16px;background:#FAFBFA;border:1px solid #C5CCCA;padding:14px 18px;margin:0 0 18px;overflow-x:auto;color:#10202B}
+.note{font-size:15px;color:#55636D;border-top:1px solid #C5CCCA;padding-top:16px;margin-top:40px}
+footer{border-top:1px solid #10202B}
+</style>
+</head>
+<body>
+<header><div class="bar"><a class="brand" href="../">UĞUR AKOĞLU</a><a class="back" href="../#writing">&larr; All writing</a></div></header>
+<main>
+<p class="meta">November 2026</p>
+<h1>Upgrades are mostly a people project: moving users to a new PLM release</h1>
+<p>Most of the effort in a PLM upgrade is not on the servers. A new release changes a screen, a menu or a saving habit, and for someone who has worked the same way for years, even a small change can feel like a loss of speed. That has been true in every upgrade and rollout I have worked on, including the 2024x upgrade and the DELMIA rollout. It is also useful to remember that people usually resist the interruption, not the improvement.</p>
+<h2>What helped</h2>
+<ul>
+<li><strong>Explain why, in the user's terms.</strong> "The servers are outdated" means little to a design engineer. "Opening the vehicle assembly now takes nine minutes instead of about seventeen" does.</li>
+<li><strong>Start with volunteers.</strong> A small group from different departments tests early, finds the awkward details and then helps colleagues in their own units. Colleagues trust a peer more than a notice from IT.</li>
+<li><strong>Train by role, not by feature.</strong> People want to know how their own daily tasks change, so sessions are built around those tasks.</li>
+<li><strong>Stay close at go-live and after.</strong> Go-live sessions, quick answers and one-to-one help in the first weeks decide whether people accept the new release or work around it.</li>
+<li><strong>Measure and report back.</strong> Sharing the numbers after the switch turns an unwelcome change into something that people can see paid off.</li>
+</ul>
+<h2>Keeping a long project on track</h2>
+<p>The 2024x upgrade ran for 18 months. I followed it step by step in Jira and the project wiki, matched my own tasks to the calendar and supported the testing, documentation, training and go-live. A project that long is hard to hold together without a visible plan, and it was satisfying to see it finish: a production cutover over a single weekend, with no business downtime.</p>
+<h2>What I take from it</h2>
+<p>The technical plan and the human plan are one plan. When I scope an upgrade now, I give training, communication and post-go-live support the same attention as sizing, testing and rollback.</p>
+<p class="note">Written by Uğur Akoğlu, PLM Solutions Engineer. These are my own views and notes, not statements by my employer.</p>
+</main>
+</body>
+</html>
