@@ -49,8 +49,8 @@ footer{border-top:1px solid #10202B}
 <p class="meta">Eylül 2024</p>
 <h1>1.600 mükerrer parça, 229.000 konumlandırma: PLM birleştirmesini matris hesabıyla düzeltmek</h1>
 <p>İki ayrı PLM sistemi tek bir sistemde birleştirildiğinde, her ikisinde de bulunan standart parçalar (somunlar, cıvatalar, vidalar, kelepçeler, kablolar) yeni sisteme aynı başlıklarla iki kez geldi. Yaklaşık 1.600 parça mükerrer oldu. Mükerrerlerin yarısı bir ürün ailesi, yarısı diğeri tarafından kullanılıyordu.</p>
-<h2>Neden zordu</h2>
-<p>Bu parçaları kullanan montajlar zaten yayınlanmıştı, bu yüzden tasarımcılar bunları düzenleyemiyordu. Yönetici yetkisine sahip PLM ekibinin yapması gerekiyordu. Elle yöntem, her ana montajı 3DEXPERIENCE'ta açıp mükerreri, konumunu koruyarak tuttuğumuz parçayla değiştirmek ve mükerrer hiçbir yerde kullanılmaz hale gelene kadar bunu sürdürüp sonra silmekti. Bazı parçaların 10 ya da 20, bazılarının yüzlerce ana montajı vardı. Yaklaşık iki ay sonra iş yeterince hızlı ilerlemiyordu.</p>
+<h2>Karşılaşılan durum</h2>
+<p>Bu parçaları kullanan montajlar zaten yayınlanmıştı, bu yüzden tasarımcılar bunları düzenleyemiyordu. Yönetici yetkisine sahip PLM ekibinin yapması gerekiyordu. Elle yöntem, her ana montajı 3DEXPERIENCE'ta açıp mükerreri, konumunu koruyarak tuttuğumuz parçayla değiştirmek ve mükerrer hiçbir yerde kullanılmaz hale gelene kadar bunu sürdürüp sonra silmekti. Bazı parçaların 10 ya da 20, bazılarının yüzlerce ana montajı vardı. Yaklaşık iki ay sonra bu yolun bu hacme ölçeklenmeyeceği anlaşıldı.</p>
 <h2>Fikir</h2>
 <p>Bir parçanın montajdaki konumu aslında bir koordinat dönüşümüdür. Parçanın bir ana montajdaki yerini iki şey belirler: parçanın kendi orijinine göre konumu ve o instance'ın ana montajdaki yerleşim matrisi. İki mükerrerin aynı orijine sahip olması garanti değildi; bu yüzden basit bir değiştirme parçayı kaydırırdı.</p>
 <p>Çözüm, her çift için ofseti bir kez ölçüp sonra her yere uygulamaktır:</p>

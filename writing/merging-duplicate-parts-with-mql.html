@@ -57,8 +57,8 @@ location.replace('/tr'+(p==='/'?'/':p)+location.search+location.hash);
 <p class="meta">September 2024</p>
 <h1>1,600 duplicate parts, 229,000 placements: fixing a PLM merge with matrix maths</h1>
 <p>When two separate PLM systems were merged into one, the standard parts that existed in both (nuts, bolts, screws, clamps, cables) arrived in the new system twice, with identical titles. About 1,600 parts were duplicated. Half the duplicates were used by one product family, half by the other.</p>
-<h2>Why it was hard</h2>
-<p>The assemblies using these parts were already released, so designers could not edit them. The PLM team, which has the administrator rights, had to do it. The manual route was to open every parent assembly in 3DEXPERIENCE and replace the duplicate with the part we kept, preserving its position, until the duplicate was no longer used anywhere and could be removed. Some parts had 10 or 20 parents, others had hundreds. After about two months the work was not moving fast enough.</p>
+<h2>The challenge</h2>
+<p>The assemblies using these parts were already released, so designers could not edit them. The PLM team, which has the administrator rights, had to do it. The manual route was to open every parent assembly in 3DEXPERIENCE and replace the duplicate with the part we kept, preserving its position, until the duplicate was no longer used anywhere and could be removed. Some parts had 10 or 20 parents, others had hundreds. After about two months it was clear that this route would not scale to the volume.</p>
 <h2>The idea</h2>
 <p>A part's position in an assembly is just a coordinate transform. Two things decide where a part sits in a parent: the position of the part relative to its own origin, and the placement matrix of that instance in the parent. The two duplicates were not guaranteed to have the same origin, so a simple swap would move the part.</p>
 <p>The fix is to measure the offset once per pair and then apply it everywhere:</p>

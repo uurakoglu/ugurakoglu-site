@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Üretim verisini Excel'den PLM sistemine taşımak | Uğur Akoğlu</title>
-<meta name="description" content="Bir tesis üretim tarafı verisini Excel dosyalarından PLM platformu içindeki DELMIA'ya taşıdığında ve SAP'ye otomatik aktarım kurduğunda neler değişti, ve insanları eğitmenin neden en zor kısım olduğu.">
+<meta name="description" content="Bir tesis üretim tarafı verisini Excel dosyalarından PLM platformu içindeki DELMIA'ya taşıdığında ve SAP'ye otomatik aktarım kurduğunda neler değişti, ve insanları bu değişime hazırlamak için neler gerektiği.">
 <link rel="canonical" href="https://ugurakoglu.com/tr/writing/moving-manufacturing-data-into-plm.html">
 <link rel="alternate" hreflang="en" href="https://ugurakoglu.com/writing/moving-manufacturing-data-into-plm.html">
 <link rel="alternate" hreflang="tr" href="https://ugurakoglu.com/tr/writing/moving-manufacturing-data-into-plm.html">
@@ -13,7 +13,7 @@
 <meta property="og:locale" content="tr_TR">
 <meta property="og:url" content="https://ugurakoglu.com/tr/writing/moving-manufacturing-data-into-plm.html">
 <meta property="og:title" content="Üretim verisini Excel'den PLM sistemine taşımak">
-<meta property="og:description" content="Bir tesis üretim tarafı verisini Excel dosyalarından PLM platformu içindeki DELMIA'ya taşıdığında ve SAP'ye otomatik aktarım kurduğunda neler değişti, ve insanları eğitmenin neden en zor kısım olduğu.">
+<meta property="og:description" content="Bir tesis üretim tarafı verisini Excel dosyalarından PLM platformu içindeki DELMIA'ya taşıdığında ve SAP'ye otomatik aktarım kurduğunda neler değişti, ve insanları bu değişime hazırlamak için neler gerektiği.">
 <meta property="og:image" content="https://ugurakoglu.com/og-moving-manufacturing-data-into-plm.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -50,7 +50,7 @@ footer{border-top:1px solid #10202B}
 <h1>Üretim verisini Excel'den PLM sistemine taşımak</h1>
 <p>Uzun süre, PLM sürecimiz tasarım yayınlandığında bitiyordu. Sonrasında olan her şey, yani verinin üretim tarafı, Excel dosyalarıyla yönetiliyordu. Ocak 2023 ile 2024 ilkbaharı arasında bu kısmı, mühendislerin zaten kullandığı PLM platformuna, DELMIA modülüyle taşıdık. Neyin değiştiği ve bunun neler gerektirdiği şöyle.</p>
 <h2>Önce: temiz bir tasarım, sonra tablolar</h2>
-<p>Tasarım, analiz, konfigürasyon ve proje mühendisleri zaten PLM içinde çalışıyordu. Tasarım bittiğinde üretim verisi Excel'e geçiyordu. Excel rahattır, çünkü herkes istediği anda istediğini düzenleyebilir; ama kimin neyi ne zaman değiştirdiğini kimse bilemez. Değişmiş bir dosya SAP'ye akmışsa, değişiklik orada iz bırakmadan kalıcı hale gelirdi.</p>
+<p>Tasarım, analiz, konfigürasyon ve proje mühendisleri zaten PLM içinde çalışıyordu. Tasarım bittiğinde üretim verisi Excel'e geçiyordu. Excel esnektir, çünkü herkes istediği anda istediğini düzenleyebilir; ama kimin neyi ne zaman değiştirdiğini kaydetmez. Değişmiş bir dosya SAP'ye akmışsa, değişiklik nereden geldiğine dair bir kayıt olmadan orada kalırdı.</p>
 <h2>Sonra: tek yer, tek sürüm</h2>
 <ul>
 <li><strong>İzlenebilirlik ve yetkiler.</strong> Her değişiklik kaydedilir, her kişinin tanımlı bir rolü vardır.</li>
@@ -60,8 +60,8 @@ footer{border-top:1px solid #10202B}
 </ul>
 <h2>Yayınlanmış veriyi bilinçli olarak değiştirmek</h2>
 <p>Yeni disiplin şu: yayınlanmış veri öylece düzenlenemez. Değişiklik gerekiyorsa iki meşru yol var: doğru yol olan normal bir revizyon ya da bilet sistemimiz üzerinden bir talep. Bu talep yönetim onayından geçer ve PLM yönetici yetkisine sahip Mühendislik IT ekibine ulaşır. Değişikliği biz yaparız ve ilgili SAP sahiplerini de bilgilendiririz; böylece iki sistem birbiriyle uyumlu kalır.</p>
-<h2>En zor kısım insanlardı</h2>
-<p>Teknoloji yönetilebilirdi. En çok emek eğitime gitti. Excel'den PLM'e geçmek, her şeyi her an değiştirebilme özgürlüğünden vazgeçmek ve her şeyin izlendiği, yetkilerin açık olduğu bir sistemi kabul etmek demektir. İnsanların bu kaybı hissetmesi haklıydı; karşılığında ne kazandıklarının sabırla anlatılması gerekti: hangi dosyanın doğru olduğu konusunda karışıklığın bitmesi ve tesiste herkesin nereye bakarsa baksın aynı bilgiyi görmesi.</p>
+<h2>İnsanları sürece dahil etmek</h2>
+<p>Teknik taraf iyi tanımlıydı; emeğin çoğu eğitim ve iletişime gitti. Excel'den PLM'e geçmek, her şeyi her an değiştirebilme özgürlüğünü, her şeyin izlendiği ve yetkilerin açık olduğu bir sistemle değiştirmek demektir. Bu değişimi ve karşılığında kazanılanları açıkça anlatmak işin ana kısmıydı: her dosyanın tek ve güvenilir bir sürümü ve tesiste herkesin nereye bakarsa baksın aynı bilgiyi görmesi.</p>
 <p>Benzer bir konu üzerinde mi çalışıyorsunuz? <a href="mailto:ugur@ugurakoglu.com">ugur@ugurakoglu.com</a> adresine yazabilir ya da <a href="https://www.linkedin.com/in/ugurakoglu/">LinkedIn</a>'den ulaşabilirsiniz.</p>
 <p class="note">Uğur Akoğlu, PLM Çözüm Mühendisi tarafından yazıldı. Bunlar kendi görüş ve notlarımdır; işverenimin açıklamaları değildir.</p>
 </main>

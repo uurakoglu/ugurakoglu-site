@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Moving manufacturing data out of Excel and into the PLM system | Uğur Akoğlu</title>
-<meta name="description" content="What changed when a plant moved production-side data from Excel files into DELMIA inside its PLM platform, with an automatic hand-off to SAP, and why training people was the hardest part.">
+<meta name="description" content="What changed when a plant moved production-side data from Excel files into DELMIA inside its PLM platform, with an automatic hand-off to SAP, and what it took to bring people along.">
 <link rel="canonical" href="https://ugurakoglu.com/writing/moving-manufacturing-data-into-plm.html">
 <link rel="alternate" hreflang="en" href="https://ugurakoglu.com/writing/moving-manufacturing-data-into-plm.html">
 <link rel="alternate" hreflang="tr" href="https://ugurakoglu.com/tr/writing/moving-manufacturing-data-into-plm.html">
 <link rel="alternate" hreflang="x-default" href="https://ugurakoglu.com/writing/moving-manufacturing-data-into-plm.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Moving manufacturing data out of Excel and into the PLM system">
-<meta property="og:description" content="What changed when a plant moved production-side data from Excel files into DELMIA inside its PLM platform, with an automatic hand-off to SAP, and why training people was the hardest part.">
+<meta property="og:description" content="What changed when a plant moved production-side data from Excel files into DELMIA inside its PLM platform, with an automatic hand-off to SAP, and what it took to bring people along.">
 <meta property="og:image" content="https://ugurakoglu.com/og-moving-manufacturing-data-into-plm.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -58,7 +58,7 @@ location.replace('/tr'+(p==='/'?'/':p)+location.search+location.hash);
 <h1>Moving manufacturing data out of Excel and into the PLM system</h1>
 <p>For a long time, our PLM process ended when the design was released. Everything after that, the manufacturing side of the data, was handled in Excel files. Between January 2023 and spring 2024 we brought that part into the same PLM platform the engineers already used, using the DELMIA module. This is what changed and what it took.</p>
 <h2>Before: a clean design, then spreadsheets</h2>
-<p>Design, analysis, configuration and project engineers already worked inside PLM. Once a design was done, production data moved into Excel. Excel is comfortable, since anyone can edit anything at any time, but nobody can tell who changed what or when. When a changed file had already flowed into SAP, the change simply lived on there without a trace.</p>
+<p>Design, analysis, configuration and project engineers already worked inside PLM. Once a design was done, production data moved into Excel. Excel is flexible, since anyone can edit anything at any time, but it does not record who changed what or when. When a changed file had already flowed into SAP, the change stayed there with no record of where it came from.</p>
 <h2>After: one place, one version</h2>
 <ul>
 <li><strong>Traceability and permissions.</strong> Every change is recorded and every person has a defined role.</li>
@@ -68,8 +68,8 @@ location.replace('/tr'+(p==='/'?'/':p)+location.search+location.hash);
 </ul>
 <h2>Changing released data on purpose</h2>
 <p>The new discipline is that released data cannot just be edited. If a change is needed, there are two legitimate routes: a normal revision, which is the right way, or a request through our ticketing system. That request goes through management approval and then to the Engineering IT team, which holds the PLM administrator rights. We make the change and also notify the relevant SAP owners, so both systems stay in step.</p>
-<h2>The hardest part was people</h2>
-<p>The technology was manageable. What took the most effort was training. Moving from Excel to PLM means giving up the freedom to change anything at any moment, and accepting a system where everything is tracked and permissions are explicit. People were right to feel that loss, and it needed patient explanation of what they gain in return: no more confusion over which file is correct, and the same information wherever anyone in the plant looks.</p>
+<h2>Bringing people along</h2>
+<p>The technical side was well defined, and most of the effort went into training and communication. Moving from Excel to PLM means trading the freedom to change anything at any moment for a system where everything is tracked and permissions are explicit. Explaining that trade clearly, and what people gain in return, was the main work: one trusted version of every file, and the same information wherever anyone in the plant looks.</p>
 
 <p>Working on something similar? Write to <a href="mailto:ugur@ugurakoglu.com">ugur@ugurakoglu.com</a> or find me on <a href="https://www.linkedin.com/in/ugurakoglu/">LinkedIn</a>.</p>
 <p class="note">Written by Uğur Akoğlu, PLM Solutions Engineer. These are my own views and notes, not statements by my employer.</p>
