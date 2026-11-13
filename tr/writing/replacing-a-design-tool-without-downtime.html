@@ -54,14 +54,14 @@ footer{border-top:1px solid #10202B}
 <h2>2. İstemcileri ve dokümanları erken hazırlamak</h2>
 <p>İstemci kurulum dosyaları ve talimatlar, geçiş tarihinden önce hazırlandı ve kurulumları yapan ekiple paylaşıldı. Böylece yeni istemciler o gün zaten yerindeydi ve kimse yazılım beklemedi.</p>
 <h2>3. Bir key user test eder ve yazılı onay verir</h2>
-<p>Test ortamı için Vesys kullanıcı grubundan bir key user, yöneticisiyle anlaşarak seçildi. Key user kendi işlerini yeni sürümde yürüttü. Bir sorun olmadığına ve geçişin yapılabileceğine dair yazılı onay istedik. Bu iki işe yarar: günlük işi bilen birinden gelen sorunları yakalar ve iş biriminin değişikliğe, gerçekleşmeden önce onay vermesini sağlar.</p>
+<p>Test ortamı için Vesys kullanıcı grubundan bir key user, yöneticisiyle anlaşarak seçildi. Key user kendi işlerini yeni sürümde yürüttü. Bir sorun olmadığına ve geçişin yapılabileceğine dair yazılı onay istedik. Günlük işi bilen birinden gelen sorunlar erkenden yakalanır ve iş birimi değişikliğe daha gerçekleşmeden onay vermiş olur.</p>
 <h2>4. Mesai sonrası yükseltme</h2>
 <p>Bu onayla birlikte, Vesys'ten Capital Essentials'a sunucu yükseltmesi 23 Şubat'ta mesai sonrası başladı ve aynı gece tamamlandı. Geride kalan Vesys bileşenleri yedeklenip başka bir yere taşındı; böylece beklenmedik bir durum çıkarsa rollback mümkün kaldı.</p>
 <h2>5. Bir sonraki iş günü</h2>
 <p>Kullanıcılar bir sonraki iş günü geldiğinde Vesys yerine Capital Essentials'ı açtı ve mevcut kütüphaneleri ve verileriyle projelerine devam etti. Hiçbir kesinti olmadı.</p>
 <h2>Dokümantasyon işin bir parçası</h2>
-<p>Yaptığım her şeyi dokümante ederim ve bu proje iyi bir örnekti. Geçişten önce kurulumu, yükseltmeyi ve ilgili diğer işleri kapsayan bir sunucu tarafı doküman ve go-live için adım adım bir kontrol listesi yazdım. O gece kendi kontrol listemi izledim: bir servisi durdur, kontrol et, bir sonraki migration adımını çalıştır, tekrar kontrol et, devam et. Hiçbir adım hafızaya bırakılmadı.</p>
-<p>Bu aynı zamanda provaların değerini de doğruladı. Test migration'ı dokümandaki adımları kanıtladı, kontrol listesi de gerçek işi sakin ve tekrarlanabilir kıldı. Bu, projenin ötesinde de önemli: benzer bir geçiş bir sonraki sefer geldiğinde, ben orada olmasam bile, insanlar dokümanları izleyebilir, daha önce karşılaştığımız sorunları ve çözümlerini görebilir ve onları yeniden çözmek zorunda kalmaz.</p>
+<p>Yaptığım her şeyi dokümante ederim ve bu proje iyi bir örnekti. Geçişten önce kurulumu, yükseltmeyi ve ilgili diğer işleri kapsayan bir sunucu tarafı doküman ve go-live için adım adım bir kontrol listesi yazdım. O gece kendi kontrol listemi izledim: bir servisi durdur, kontrol et, bir sonraki migration adımını çalıştır, tekrar kontrol et, devam et.</p>
+<p>Test migration'ı dokümandaki adımları zaten kanıtlamıştı, gerçek geçiş de kontrol listesini adım adım izlemekten ibaretti. Dokümanlar sonrası için de işe yarıyor: benzer bir geçiş bir sonraki sefer geldiğinde, ben orada olmasam bile, insanlar bunları izleyip hangi sorunlarla karşılaştığımızı ve nasıl çözdüğümüzü görebilir.</p>
 <h2>İki sürüm yan yana</h2>
 <p>Başka bir ekip hâlâ eski bir Vesys sürümünü kullanıyor; bu yüzden hem onu hem de Capital Essentials'ı yönetiyorum. Bir grubun taşınması herkesin aynı anda taşındığı anlamına gelmez, bu yüzden iki ortam yan yana çalışıyor.</p>
 <p>Benzer bir konu üzerinde mi çalışıyorsunuz? <a href="mailto:ugur@ugurakoglu.com">ugur@ugurakoglu.com</a> adresine yazabilir ya da <a href="https://www.linkedin.com/in/ugurakoglu/">LinkedIn</a>'den ulaşabilirsiniz.</p>

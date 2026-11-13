@@ -57,9 +57,9 @@ location.replace('/tr'+(p==='/'?'/':p)+location.search+location.hash);
 <p class="meta">September 2024</p>
 <h1>How I fixed 1,600 duplicate parts in a PLM merge with matrix maths</h1>
 <p>When two separate PLM systems were merged into one, the standard parts that existed in both (nuts, bolts, screws, clamps, cables) arrived in the new system twice, with identical titles. About 1,600 parts were duplicated. Half the duplicates were used by one product family, half by the other.</p>
-<h2>The challenge</h2>
+<h2>Why doing it by hand did not work</h2>
 <p>The assemblies using these parts were already released, so designers could not edit them. The PLM team, which has the administrator rights, had to do it. The manual route was to open every parent assembly in 3DEXPERIENCE and replace the duplicate with the part we kept, preserving its position, until the duplicate was no longer used anywhere and could be removed. Some parts had 10 or 20 parents, others had hundreds. After about two months it was clear that this route would not scale to the volume.</p>
-<h2>The idea</h2>
+<h2>The approach</h2>
 <p>A part's position in an assembly is just a coordinate transform. Two things decide where a part sits in a parent: the position of the part relative to its own origin, and the placement matrix of that instance in the parent. The two duplicates were not guaranteed to have the same origin, so a simple swap would move the part.</p>
 <p>The fix is to measure the offset once per pair and then apply it everywhere:</p>
 <ul>
@@ -69,9 +69,9 @@ location.replace('/tr'+(p==='/'?'/':p)+location.search+location.hash);
 </ul>
 <div class="eq">P' = P &times; D</div>
 <p>The kept part is then added to each parent with that placement, together with the same instance name and attributes. After checking that both parts overlap exactly, the duplicate is removed from the parent. When it is no longer used anywhere, it is hidden from users so it is not picked again.</p>
-<h2>What it changed</h2>
+<h2>The numbers</h2>
 <p>The manual work, about 560 hours, merged 643 parts across roughly 3,700 assemblies and 12,800 instances, which is around 4.3 hours per hundred instances. The scripted work, including about 25 hours of testing and about 130 hours in total, merged 647 parts across roughly 15,000 assemblies and 229,000 instances, which is about 3 minutes per hundred instances. Scaled to the same volume, that is about 10,000 hours of manual work avoided, or an estimated 1,100 man-days.</p>
-<h2>Lessons learned</h2>
+<h2>What I would repeat</h2>
 <ul>
 <li>Test the maths on a handful of parts and check overlap before running at scale.</li>
 <li>Make every step verifiable and repeatable, so that anything unexpected can be rolled back.</li>
