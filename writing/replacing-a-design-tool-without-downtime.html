@@ -56,7 +56,7 @@ location.replace('/tr'+(p==='/'?'/':p)+location.search+location.hash);
 <main>
 <p class="meta">February 2024</p>
 <h1>Replacing a design application under live users: Vesys to Capital Essentials</h1>
-<p>We moved our electrical design users from Vesys to Capital Essentials. The aim was simple to state and demanding to deliver: keep every table in the database and every user as it was, and have people keep working the next working day as if nothing had happened. Here is the sequence that made that possible. The project started on 1 December 2023, and the production switch happened on the evening of 23 February 2024.</p>
+<p>We moved our electrical design users from Vesys to Capital Essentials. The aim was to keep every table in the database and every user as it was, so people could carry on working the next working day as if nothing had happened. This is the sequence we followed. The project started on 1 December 2023, and the production switch happened on the evening of 23 February 2024.</p>
 <h2>1. Test without users, with real-looking data</h2>
 <p>Before any change on the live system, the migration was rehearsed in an environment without users, using test projects, test data and test users. This is where the technical problems get found and fixed. The migration and upgrade in the test environment were completed on 29 January 2024.</p>
 <h2>2. Prepare the clients and the documents early</h2>
@@ -70,7 +70,7 @@ location.replace('/tr'+(p==='/'?'/':p)+location.search+location.hash);
 <h2>Documentation is part of the work</h2>
 <p>I document everything I do, and this project was a good example. Before the migration I wrote a server-side document covering the installation, the upgrade and the other tasks involved, and a step-by-step checklist for the live cutover. On the night I followed my own checklist: stop a service, check it, run the next migration step, check again, move on. No step depended on memory.</p>
 <p>That also confirmed the value of the rehearsals. The test migration proved the steps in the document, and the checklist then made the real thing calm and repeatable. It matters beyond this project: the next time a similar migration comes up, even if I am not there, people can follow the documents, see the problems we met before and their solutions, and avoid solving them again.</p>
-<h2>An aside: two versions side by side</h2>
+<h2>Two versions side by side</h2>
 <p>Another team still uses an older Vesys version, so I administer both that and Capital Essentials. One group moving does not mean everyone moves at once, so the two environments run side by side.</p>
 <p>Working on something similar? Write to <a href="mailto:ugur@ugurakoglu.com">ugur@ugurakoglu.com</a> or find me on <a href="https://www.linkedin.com/in/ugurakoglu/">LinkedIn</a>.</p>
 <p class="note">Written by Uğur Akoğlu, PLM Solutions Engineer. These are my own views and notes, not statements by my employer.</p>

@@ -57,7 +57,7 @@ location.replace('/tr'+(p==='/'?'/':p)+location.search+location.hash);
 <p class="meta">September 2025</p>
 <h1>What moving PLM servers from Windows to Linux actually changed</h1>
 <p>My M.Sc. thesis at Ege University asked a practical question: if a PLM platform's application and document servers move from Windows to Linux, and the database stays where it is, what does that change for the people using it? The case was a 500-user 3DEXPERIENCE environment moving from R2021x on Windows to R2024x on Linux.</p>
-<h2>Why look at this at all</h2>
+<h2>Why this question</h2>
 <p>PLM platforms have traditionally been built on Windows servers. That choice brings licence cost, a heavier maintenance load and security questions, but moving away from it is risky because every PLM product has its own platform dependencies. The thesis walks through those dependencies first, then through migration models, tools, risks and cost, before testing the result on a live system.</p>
 <h2>What I measured</h2>
 <p>All measurements were taken in the busiest weekday window, with the same hardware and the database server left on Windows in both setups, so the only real change was the application layer.</p>
