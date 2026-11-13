@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>1.600 mükerrer parça, 229.000 konumlandırma: PLM birleştirmesini matris hesabıyla düzeltmek | Uğur Akoğlu</title>
+<title>PLM birleştirmesindeki 1.600 mükerrer parçayı matris hesabıyla düzelttim | Uğur Akoğlu</title>
 <meta name="description" content="Yayınlanmış binlerce montajdaki mükerrer standart parçaları değiştirmek için sunucu tarafı MQL ve koordinat matrislerini nasıl kullandım; tahmini 1.100 adam-günlük tasarruf.">
 <link rel="canonical" href="https://ugurakoglu.com/tr/writing/merging-duplicate-parts-with-mql.html">
 <link rel="alternate" hreflang="en" href="https://ugurakoglu.com/writing/merging-duplicate-parts-with-mql.html">
@@ -12,7 +12,7 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="tr_TR">
 <meta property="og:url" content="https://ugurakoglu.com/tr/writing/merging-duplicate-parts-with-mql.html">
-<meta property="og:title" content="1.600 mükerrer parça, 229.000 konumlandırma: PLM birleştirmesini matris hesabıyla düzeltmek">
+<meta property="og:title" content="PLM birleştirmesindeki 1.600 mükerrer parçayı matris hesabıyla düzelttim">
 <meta property="og:description" content="Yayınlanmış binlerce montajdaki mükerrer standart parçaları değiştirmek için sunucu tarafı MQL ve koordinat matrislerini nasıl kullandım; tahmini 1.100 adam-günlük tasarruf.">
 <meta property="og:image" content="https://ugurakoglu.com/og-merging-duplicate-parts-with-mql.png">
 <meta property="og:image:width" content="1200">
@@ -47,7 +47,7 @@ footer{border-top:1px solid #10202B}
 <header><div class="bar"><a class="brand" href="../">UĞUR AKOĞLU</a><span><a class="back" href="../#writing">&larr; Tüm yazılar</a> &nbsp; <a class="back" href="../../writing/merging-duplicate-parts-with-mql.html" hreflang="en" lang="en" onclick="try{localStorage.setItem('lang','en')}catch(e){}">EN</a></span></div></header>
 <main>
 <p class="meta">Eylül 2024</p>
-<h1>1.600 mükerrer parça, 229.000 konumlandırma: PLM birleştirmesini matris hesabıyla düzeltmek</h1>
+<h1>PLM birleştirmesindeki 1.600 mükerrer parçayı matris hesabıyla düzelttim</h1>
 <p>İki ayrı PLM sistemi tek bir sistemde birleştirildiğinde, her ikisinde de bulunan standart parçalar (somunlar, cıvatalar, vidalar, kelepçeler, kablolar) yeni sisteme aynı başlıklarla iki kez geldi. Yaklaşık 1.600 parça mükerrer oldu. Mükerrerlerin yarısı bir ürün ailesi, yarısı diğeri tarafından kullanılıyordu.</p>
 <h2>Karşılaşılan durum</h2>
 <p>Bu parçaları kullanan montajlar zaten yayınlanmıştı, bu yüzden tasarımcılar bunları düzenleyemiyordu. Yönetici yetkisine sahip PLM ekibinin yapması gerekiyordu. Elle yöntem, her ana montajı 3DEXPERIENCE'ta açıp mükerreri, konumunu koruyarak tuttuğumuz parçayla değiştirmek ve mükerrer hiçbir yerde kullanılmaz hale gelene kadar bunu sürdürüp sonra silmekti. Bazı parçaların 10 ya da 20, bazılarının yüzlerce ana montajı vardı. Yaklaşık iki ay sonra bu yolun bu hacme ölçeklenmeyeceği anlaşıldı.</p>

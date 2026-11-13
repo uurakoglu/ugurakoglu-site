@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>1,600 duplicate parts, 229,000 placements: fixing a PLM merge with matrix maths | Uğur Akoğlu</title>
+<title>How I fixed 1,600 duplicate parts in a PLM merge with matrix maths | Uğur Akoğlu</title>
 <meta name="description" content="How I used server-side MQL and coordinate matrices to replace duplicated standard parts across thousands of released assemblies, saving an estimated 1,100 man-days.">
 <link rel="canonical" href="https://ugurakoglu.com/writing/merging-duplicate-parts-with-mql.html">
 <link rel="alternate" hreflang="en" href="https://ugurakoglu.com/writing/merging-duplicate-parts-with-mql.html">
 <link rel="alternate" hreflang="tr" href="https://ugurakoglu.com/tr/writing/merging-duplicate-parts-with-mql.html">
 <link rel="alternate" hreflang="x-default" href="https://ugurakoglu.com/writing/merging-duplicate-parts-with-mql.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="1,600 duplicate parts, 229,000 placements: fixing a PLM merge with matrix maths">
+<meta property="og:title" content="How I fixed 1,600 duplicate parts in a PLM merge with matrix maths">
 <meta property="og:description" content="How I used server-side MQL and coordinate matrices to replace duplicated standard parts across thousands of released assemblies, saving an estimated 1,100 man-days.">
 <meta property="og:image" content="https://ugurakoglu.com/og-merging-duplicate-parts-with-mql.png">
 <meta property="og:image:width" content="1200">
@@ -55,7 +55,7 @@ location.replace('/tr'+(p==='/'?'/':p)+location.search+location.hash);
 <header><div class="bar"><a class="brand" href="../">UĞUR AKOĞLU</a><a class="back" href="../#writing">&larr; All writing</a><a class="back" href="../tr/writing/merging-duplicate-parts-with-mql.html" hreflang="tr" lang="tr" onclick="try{localStorage.setItem('lang','tr')}catch(e){}">TR</a></div></header>
 <main>
 <p class="meta">September 2024</p>
-<h1>1,600 duplicate parts, 229,000 placements: fixing a PLM merge with matrix maths</h1>
+<h1>How I fixed 1,600 duplicate parts in a PLM merge with matrix maths</h1>
 <p>When two separate PLM systems were merged into one, the standard parts that existed in both (nuts, bolts, screws, clamps, cables) arrived in the new system twice, with identical titles. About 1,600 parts were duplicated. Half the duplicates were used by one product family, half by the other.</p>
 <h2>The challenge</h2>
 <p>The assemblies using these parts were already released, so designers could not edit them. The PLM team, which has the administrator rights, had to do it. The manual route was to open every parent assembly in 3DEXPERIENCE and replace the duplicate with the part we kept, preserving its position, until the duplicate was no longer used anywhere and could be removed. Some parts had 10 or 20 parents, others had hundreds. After about two months it was clear that this route would not scale to the volume.</p>

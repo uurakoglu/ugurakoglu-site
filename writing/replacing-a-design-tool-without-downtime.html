@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Replacing a design application under live users: Vesys to Capital Essentials | Uğur Akoğlu</title>
+<title>Replacing Vesys with Capital Essentials while users kept working | Uğur Akoğlu</title>
 <meta name="description" content="How we upgraded an electrical design application from Vesys to Capital Essentials on the same database and users, with test projects, key-user sign-off and a rollback plan, so people continued the next working day without any downtime.">
 <link rel="canonical" href="https://ugurakoglu.com/writing/replacing-a-design-tool-without-downtime.html">
 <link rel="alternate" hreflang="en" href="https://ugurakoglu.com/writing/replacing-a-design-tool-without-downtime.html">
 <link rel="alternate" hreflang="tr" href="https://ugurakoglu.com/tr/writing/replacing-a-design-tool-without-downtime.html">
 <link rel="alternate" hreflang="x-default" href="https://ugurakoglu.com/writing/replacing-a-design-tool-without-downtime.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Replacing a design application under live users: Vesys to Capital Essentials">
+<meta property="og:title" content="Replacing Vesys with Capital Essentials while users kept working">
 <meta property="og:description" content="How we upgraded an electrical design application from Vesys to Capital Essentials on the same database and users, with test projects, key-user sign-off and a rollback plan, so people continued the next working day without any downtime.">
 <meta property="og:image" content="https://ugurakoglu.com/og-replacing-a-design-tool-without-downtime.png">
 <meta property="og:image:width" content="1200">
@@ -55,7 +55,7 @@ location.replace('/tr'+(p==='/'?'/':p)+location.search+location.hash);
 <header><div class="bar"><a class="brand" href="../">UĞUR AKOĞLU</a><a class="back" href="../#writing">&larr; All writing</a><a class="back" href="../tr/writing/replacing-a-design-tool-without-downtime.html" hreflang="tr" lang="tr" onclick="try{localStorage.setItem('lang','tr')}catch(e){}">TR</a></div></header>
 <main>
 <p class="meta">February 2024</p>
-<h1>Replacing a design application under live users: Vesys to Capital Essentials</h1>
+<h1>Replacing Vesys with Capital Essentials while users kept working</h1>
 <p>We moved our electrical design users from Vesys to Capital Essentials. The aim was to keep every table in the database and every user as it was, so people could carry on working the next working day as if nothing had happened. This is the sequence we followed. The project started on 1 December 2023, and the production switch happened on the evening of 23 February 2024.</p>
 <h2>1. Test without users, with real-looking data</h2>
 <p>Before any change on the live system, the migration was rehearsed in an environment without users, using test projects, test data and test users. This is where the technical problems get found and fixed. The migration and upgrade in the test environment were completed on 29 January 2024.</p>
